@@ -1,10 +1,10 @@
 # Employee-Management-
 Employee Management system Using Python
 
-## install mysqli-connector and Textable
+### Install mysqli-connector and Textable
 
-## code to install above library
+### code to install above library
 
-## pip install mysql-connector-python
-## pip install texttable
+#### pip install mysql-connector-python
+#### pip install texttable
 
