@@ -4,6 +4,7 @@ from texttable import Texttable
 
 emp = E.EmployeeManagement()
 dep = E.Department()
+cus = E.Custom()
 
 while True:
     print("""Select any one : 
@@ -14,6 +15,7 @@ while True:
             5. Add Department
             6. Remove Department
             7. View Department
+            8. Run Custom Query
         """)
     
     opt = int(input("Enter Option : "))
@@ -58,4 +60,18 @@ while True:
         table = Texttable()
         table.add_rows(dnames)
         print(table.draw())
+    
+    elif opt == 8:
+        query = input("Enter Query : ")
+        res = cus.cusquery(query)
+        if res == None:
+            print("Query Executed.....")
+        elif res == False:
+            print("Query Execution Failed....")
+        else:
+            table = Texttable()
+            table.add_rows(res)
+            print(table.draw())
+            
+
             

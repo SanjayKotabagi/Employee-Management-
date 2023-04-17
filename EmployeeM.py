@@ -35,7 +35,6 @@ class EmployeeManagement():
         cr.execute(query)
         conn.commit()  
 
-
 class Department():
     def addDep(self,dname):
         query = f'insert into department(name) values("{dname}");'
@@ -53,6 +52,16 @@ class Department():
         query = f'delete from department where id={id}'
         cr.execute(query)
         conn.commit() 
+
+class Custom():
+    def cusquery(self,query):
+        try : 
+            cr.execute(query)
+            if ("select" or "view" ) in query:
+                return list(cr.fetchall())
+            conn.commit()
+        except:
+            return False
 
 # print(db.getconnetion())
 
